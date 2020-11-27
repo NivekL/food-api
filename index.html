@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to FoodPedia</h1>
+    <h2>Search by keyword or ingredients (must be comma separated)</h2>
+    <input id="keywords" type="text" placeholder="Mexican or pizza">
+    <input id="ingredients" type="text" placeholder="cheese, salt, chili">
+    <button id="search" type="submit">Search</button>
+
+    <div id="container">
+        <img class="loading hidden" src="img/loading.gif" alt="">
+    </div>
+    <div id="pagination" class="hidden">
+        <button id="prev-button" disabled="true">Previous</button>
+        <span id="current-page">1</span>
+        <button id="next-button">next</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

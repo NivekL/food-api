@@ -1,0 +1,33 @@
+.hidden{
+    display: none;
+}
+
+h1, h2, p, a {
+    color: black;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+#container {
+    max-width: 960px;
+    margin: 50px 0;
+}
+.food-container {
+    display: flex;
+    align-items: center;
+    width: 800px;
+    margin: 20px 0;
+    padding: 15px 15px 15px 10px;
+    border-bottom: 3px solid #accdec;
+    background-color: #dcecfb;
+}
+
+.food-info-container a:hover {
+    text-decoration: underline;
+}
+
+.food-thumbnail-container img {
+    max-width: 100%;
+    min-width: 100px;
+    margin-right: 10px;
+}
