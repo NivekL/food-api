@@ -31,18 +31,17 @@ async function fetchData() {
 
             if(keyWords.value.trim() === "" && ingredients.value.trim() === "") {
                 content.innerHTML = emptyResult();
+                currentPage.innerText = pageNum;
             } else {
                 content.innerHTML = displaySearchData(data);
                 pagination(pageNum);
-                loadingImg.classList.toggle("hidden");
-
             }
+            loadingImg.classList.toggle("hidden");
         }
     } catch (e) {
         console.log("error occured " + e);
 
-        content.innerHTML = "<h2>Seems there was a problem with your search combination. Try something else.</h2>"; 
-    } finally {
+        content.innerHTML = "<h2>Could not find what you are looking for or there are no more recipes. Try something else.</h2>"; 
     }
 }
 
@@ -63,7 +62,7 @@ function displaySearchData(data) {
         displayResults += "</div>";
     }
 
-    if(foods.length < 3) {
+    if(foods.length < 3 || foods.length === 0) {
         nextButton.setAttribute("disabled", "true");
     } else {
         nextButton.removeAttribute("disabled");
@@ -73,6 +72,7 @@ function displaySearchData(data) {
 }
 
 function emptyResult() {
+    nextButton.setAttribute("disabled", "true");
     return "<h2>Type in ingredients (comma separated) or a keyword to get results.</h2>";
 }
 
