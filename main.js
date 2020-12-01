@@ -62,8 +62,12 @@ function displaySearchData(data) {
         displayResults += "</div>";
     }
 
-    if(foods.length < 3 || foods.length === 0) {
+    if(foods.length === 0) {
         nextButton.setAttribute("disabled", "true");
+        return "<h2>Could not find what you are looking for</h2>";
+    } else if(foods.length < 2) {
+        nextButton.setAttribute("disabled", "true");
+        return "<h2>You've reached the end of the results</h2>";
     } else {
         nextButton.removeAttribute("disabled");
     }
