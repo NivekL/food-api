@@ -23,7 +23,6 @@ async function fetchData() {
         loadingImg.classList.toggle("hidden");
 
         let response = await fetch("http://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?q=" + keyWords.value + "&i=" + ingredients.value.split(' ').join('+') + "&p=" + pageNum);
-        console.log(response.url);
         if(!response.ok) {
             throw new Error("there was an error with the response " + response.status);
         } else {
@@ -88,7 +87,6 @@ function prev() {
     } else if(pageNum > 1 && prevButton.hasAttribute("disabled")) {
         prevButton.removeAttribute("disabled");
     }
-    console.log(pageNum);
     fetchData(pageNum);
 }
 
@@ -100,7 +98,6 @@ function next() {
     } else if(pageNum > 1 && prevButton.hasAttribute("disabled")) {
         prevButton.removeAttribute("disabled");
     }
-    console.log(pageNum);
     fetchData(pageNum);
 }
 
