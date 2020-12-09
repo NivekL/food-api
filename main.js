@@ -49,7 +49,6 @@ function displaySearchData(data) {
     let foods = data['results'];
     for(let food of foods) {
         displayResults += "<div class='food-container'>";
-            displayResults =  
             displayResults += `
                 <div class='food-thumbnail-container'>
                     <img src='${food.thumbnail}' >
